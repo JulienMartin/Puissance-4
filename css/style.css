@@ -1,0 +1,40 @@
+body {
+    background: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+    text-align: center;
+}
+
+h1 {
+    font-style: italic;
+    font-family: Arial, sans-serif;
+    font-size: 70px;
+}
+
+#grid {
+    display: flex;
+    justify-content: center;
+}
+
+.cell, .case-cliquée-jaune, .case-cliquée-rouge, .yellow-clignote, .red-clignote {
+    height: 15px;
+    width: 15px;
+    padding: 12px;
+    border: solid 1px blue;
+    border-radius: 50%;
+    margin: 1px;
+    cursor: grabbing;
+}
+
+.yellow-clignote {
+    background-color: yellow;
+    animation: colorclignote 1s infinite;
+}
+
+.red-clignote {
+    background-color: red;
+    animation: colorclignote 1s infinite;
+}
+
+@keyframes colorclignote {
+    0% {}
+    50% {background-color: white}
+}
