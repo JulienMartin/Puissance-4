@@ -223,7 +223,7 @@ let app = {
             let activeColumn = columns[columnIndex];
 
             // on cible cette variable 'notes' sur le dernier enfant dont la classe vaut 'cell'
-            // car c'est celui-ci qu'on va colorier en jaune
+            // car c'est celui-ci qu'on va colorier en rouge
             for (let i = 0; i < activeColumn.childNodes.length; i++){
                 if (activeColumn.childNodes[i].className == "cell"){
                     notes = activeColumn.childNodes[i];
@@ -251,17 +251,17 @@ let app = {
         // on parcourt l'ensemble des 'solutions[]'
         for (let k = 0; k < 69; k++){
 
-            // on définit et on initialise à 0 une variable qui va compter le nombre de cellules d'un même ensemble 'solutions[]' coloriées en jaune
+            // on définit et on initialise à 0 une variable qui va compter le nombre de cellules d'un même ensemble 'solutions[]' coloriées en rouge
             let compteLose = 0;
 
-                // on vérifie si chaque élément de solutions[k] est colorié en jaune ou non, si c'est le cas on ajoute 1 à notre variable
+                // on vérifie si chaque élément de solutions[k] est colorié en rouge ou non, si c'est le cas on ajoute 1 à notre variable
                 for (let redColorCell of solutions[k]){
                     if (redColorCell.style.backgroundColor == 'red'){
                         compteLose += 1;
                     }
                 }
 
-                // si la variable vaut 4, le joueur a gagné et on affiche une alerte
+                // si la variable vaut 4, le joueur a perdu et on affiche une alerte
                 if (compteLose == 4){
                     for (let redColorCell of solutions[k]){
                         redColorCell.classList.remove('case-cliquée-rouge');
