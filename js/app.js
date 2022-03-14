@@ -160,7 +160,7 @@ let app = {
         // on effectue le coloriage en jaune
         notes.style.backgroundColor = 'yellow';
 
-        // on change la classe de l'élément en 'cell case-cliquée-jaune' de façon à ne plus avoir 'cell', en prévision des clics à venir
+        // on change la classe de l'élément en case-cliquée-jaune' de façon à ne plus avoir 'cell', en prévision des clics à venir
         notes.classList.remove('cell');
         notes.classList.add('case-cliquée-jaune');
 
