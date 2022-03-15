@@ -10,7 +10,10 @@
     }
 }
 
-// on définit maintenant les 69 façons d'avoir 4 cellules 'consécutives' dans cette grille de taille 6*7
+// première version du projet : définition lourde de toutes les combinaisons gagnantes possibles
+// on doit pouvoir faire plus simple et plus astucieux, à améliorer donc ! 
+
+// on définit donc les 69 façons d'avoir 4 cellules 'consécutives' dans cette grille de taille 6*7
 let solutions = new Array(69);
 
     // d'abord à l'horizontale : 4 façons sur chacune des 6 lignes : 24 possibilités
@@ -160,7 +163,7 @@ let app = {
         // on effectue le coloriage en jaune
         notes.style.backgroundColor = 'yellow';
 
-        // on change la classe de l'élément en case-cliquée-jaune' de façon à ne plus avoir 'cell', en prévision des clics à venir
+        // on change la classe de l'élément en 'case-cliquée-jaune' de façon à ne plus avoir 'cell', en prévision des clics à venir
         notes.classList.remove('cell');
         notes.classList.add('case-cliquée-jaune');
 
@@ -230,15 +233,17 @@ let app = {
                 }
             }
 
+            // message affiché dans la console lorsque le nombre tiré au sort correspond à une colonne déjà pleine
+            // informatif pour le développeur, invisible pour l'utilisateur
             if (notes == null) {
                 console.log('index tiré au sort : ' + columnIndex + ' mais la colonne est déjà pleine');
             }
         }
          
-        // on effectue le coloriage en jaune
+        // on effectue le coloriage en rouge
         notes.style.backgroundColor = 'red';
 
-        // on change la classe de l'élément en 'cell case-cliquée-rouge' de façon à ne plus avoir simplement 'cell', en prévision des clics à venir
+        // on change la classe de l'élément en 'case-cliquée-rouge' de façon à ne plus avoir 'cell', en prévision des clics à venir
         notes.classList.remove('cell');
         notes.classList.add('case-cliquée-rouge');
 
